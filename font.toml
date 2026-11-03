@@ -1,6 +1,6 @@
 # Saguna Mono: what the foundry needs to know. See partech-foundry/README.md.
 name = "Saguna Mono"
-version = "0.100"           # x.yyy; bump for every release
+version = "0.200"           # x.yyy; bump for every release
 year = 2026
 category = "mono"
 description = "Saguna Mono is a rounded monospace for code: a light, open rhythm with soft round stroke ends and squarish rounds, and a true cursive italic with looped, handwritten forms."

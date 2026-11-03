@@ -1,4 +1,4 @@
-# Saguna Mono 0.100
+# Saguna Mono 0.200
 
 Saguna Mono is a rounded monospace for code: a light, open rhythm with soft round stroke ends and squarish rounds, and a true cursive italic with looped, handwritten forms.
 

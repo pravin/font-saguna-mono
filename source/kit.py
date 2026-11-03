@@ -12,7 +12,8 @@ CAP, XH, ASC, DSC = 710, 540, 760, -225   # x-height and caps as tall as JetBrai
 W = 600               # the cell: every glyph has this advance
 TOP, BOT = 980, -260  # the line (typo ascender/descender): box drawing fills it exactly; accents fit under TOP
 MATH = 352            # the maths axis: + - = < > and arrows, and the hyphen, so -> and => line up
-PHI = 40.0            # bowl terminals stop where the stroke runs at this slope (open, friendly apertures)
+PHI = 64.0            # bowl terminals stop where the stroke runs at this slope: steep enough that c C e s reach well round (at 40 the
+                      # squarish rounds cut them off early and c read as a bracket)
 PHI_LONG = 68.0       # the longer terminals of 2 5 6 9 (S and $ run on further, to the sides of their bowls): they curl further round, so the figures look complete
 
 

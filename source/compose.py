@@ -41,7 +41,7 @@ def marks(K, case=False):
     M['circumflex'] = sp([D((-aw + am, am), (0, h - am), k=km), D((aw - am, am), (0, h - am), k=km)])
     M['caron'] = sp([D((-aw + am, h - am), (0, am), k=km), D((aw - am, h - am), (0, am), k=km)])
     dep = (92 if case else 108) - bm
-    M['breve'] = sp([o(se(0, dep + bm, 116 - am, dep, 190, 350), k=km)])
+    M['breve'] = sp([o(se(0, dep + bm, 116 - am, dep, 196, 344), k=km)])     # ends short of level: they left a step in Bold Italic
     amp = 34 if case else 40
     M['tilde'] = sp([o(K.wave(-128, 128, amp + bm, amp), k=km)])
     M['macron'] = sp([K.hl(bm + 12, -128, 128, k=km)])

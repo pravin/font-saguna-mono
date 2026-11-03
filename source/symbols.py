@@ -165,20 +165,21 @@ def extend(G, K, env):
     sp_ = se(W / 2, ym_s + ur, urx, ur, K.term(urx, ur, 0), 270) + se(W / 2, ym_s - lr, lrx, lr, 90, K.term(lrx, lr, 2) - 360)[1:]
     upper = dict(s=[o(sp_)], p=[])
     G['§'] = merge(upper, tf(upper, -1, -1, W, yt_s + yb_s - (yt_s - yb_s) / 2))      # the turned copy sits one bowl lower
-    rR = 280 - a * 0.8
-    S('©', [ring(W / 2, 360, rR, rR + 20, k=0.8),
+    kr_ = min(0.8, 92 / w)                           # the ring stops growing, so R and C keep room inside it in Bold
+    rR = 280 - a * kr_
+    S('©', [ring(W / 2, 360, rR, rR + 20, k=kr_),
             o(se(W / 2, 360, 120 - a * 0.7, 140 - b * 0.7, K.term(120, 140, 0), K.term(120, 140, 3)), k=0.7)])
     kR = min(0.66, 58 / w)
-    S('®', [ring(W / 2, 360, rR, rR + 20, k=0.8), vl(225, 190, 530, k=kR),
+    S('®', [ring(W / 2, 360, rR, rR + 20, k=kr_), vl(225, 190, 530, k=kR),
             o([(225, 530 - b * kR), (325, 530 - b * kR)] + se(325, 455, 75, 75 - b * kR, 90, -90) + [(225, 380)], k=kR),
             D((330, 380), (400, 190), (0, 190, W, 530), k=kR)])
     kd_ = min(0.8, 60 / w)
     S('°', [ring(W / 2, CAP - 126, 126 - a * kd_, 126 - b * kd_, k=kd_)])
-    S('±', [hl(MATH + 60, 110, 490), vl(W / 2, MATH - 120, MATH + 240), hl(MATH - 200, 110, 490)])
+    S('±', [hl(MATH + 60, 86, 514), vl(W / 2, MATH - 140, MATH + 260), hl(MATH - 220, 86, 514)])
     S('×', [D((150, MATH - 150), (450, MATH + 150)), D((150, MATH + 150), (450, MATH - 150))])
-    S('÷', [hl(MATH, 100, 500)], [dot(W / 2, MATH + 190, rd * 0.95), dot(W / 2, MATH - 190, rd * 0.95)])
+    S('÷', [hl(MATH, 80, 520)], [dot(W / 2, MATH + 200, rd * 0.95), dot(W / 2, MATH - 200, rd * 0.95)])     # as wide as + and =
     S('¬', [o([(100, MATH + 80), (500 - a, MATH + 80), (500 - a, MATH - 110)])])
-    S('−', [hl(MATH, 100, 500)])
+    S('−', [hl(MATH, 80, 520)])
     S('«', [o([(300, MATH + 170), (140, MATH), (300, MATH - 170)], k=0.95), o([(490, MATH + 170), (330, MATH), (490, MATH - 170)], k=0.95)])
     S('»', [o([(110, MATH + 170), (270, MATH), (110, MATH - 170)], k=0.95), o([(300, MATH + 170), (460, MATH), (300, MATH - 170)], k=0.95)])
     S('‹', [o([(390, MATH + 170), (230, MATH), (390, MATH - 170)], k=0.95)])
@@ -201,11 +202,12 @@ def extend(G, K, env):
             D((315, CAP), (442, 470), (0, 470, W, CAP), k=0.62), D((570, CAP), (442, 470), (0, 470, W, CAP), k=0.62)])
 
     # ------------------------------------------------------------ maths
-    S('≤', [o([(470, MATH + 250), (150, MATH + 90), (470, MATH - 70)]), hl(MATH - 220, 140, 470)])
-    S('≥', [o([(130, MATH + 250), (450, MATH + 90), (130, MATH - 70)]), hl(MATH - 220, 130, 460)])
+    S('≤', [o([(490, MATH + 270), (120, MATH + 100), (490, MATH - 70)]), hl(MATH - 230, 110, 490)])
+    S('≥', [o([(110, MATH + 270), (480, MATH + 100), (110, MATH - 70)]), hl(MATH - 230, 110, 490)])
     G['≈'] = merge(tf(G['~'], 1, 1, 0, 90), tf(G['~'], 1, 1, 0, -90))
-    S('≠', [hl(MATH - 100, 100, 500), hl(MATH + 100, 100, 500), D((200, MATH - 250), (400, MATH + 250))])
-    S('∞', [ring(192, MATH, 122 - a * 0.85, 98 - b * 0.85, k=0.85), ring(408, MATH, 122 - a * 0.85, 98 - b * 0.85, k=0.85)])    # the loops overlap
+    S('≠', [hl(MATH - 112, 86, 514), hl(MATH + 112, 86, 514), D((200, MATH - 260), (400, MATH + 260))])
+    ki_ = min(0.85, 94 / w)                          # a pen that stops growing: the loops filled in in Bold
+    S('∞', [ring(192, MATH, 122 - a * ki_, 98 - b * ki_, k=ki_), ring(408, MATH, 122 - a * ki_, 98 - b * ki_, k=ki_)])    # the loops overlap
     S('√', [o([(50, MATH + 20), (150, MATH + 60), (290, -20), (540, BR_T)])])
     rt = 110
     S('∫', [o(se(300 + rt, BR_T - b - rt, rt, rt, 15, 180) + se(300 - rt, BR_B + b + rt, rt, rt, 0, -165))])

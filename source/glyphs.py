@@ -75,13 +75,14 @@ def make(K: Kit, italic=False):
     S('m', [vl(m0, 0, XH, k=km), arch(m0, m1, km, ram, XH + osl - b * km), arch(m1, m2, km, ram, XH + osl - b * km)])
     rxu = (xr - xl) / 2
     S('u', [o([(xl, XH)] + se(xl + rxu, yb + ra, rxu, ra, 180, 360, tp(None, 1))), vl(xr, 0, XH)])
-    # r: the arm leaves the stem in a soft shoulder and ends level; a foot slab fills the cell
-    xs_r = 228
-    rxr = 0.36 * (R - L)
+    # r: the arm leaves the stem in a soft shoulder and ends level. No foot: beside JetBrains and SF Mono a footed
+    # r read as a hook (err, str); the stem sits left of centre so the arm fills the cell, and rn stays apart from m
+    xs_r = 148
+    rxr = 0.42 * (R - L)
     tr_ = tp(0, None)
     kr = lambda f: min(tr_(f), 1 - 0.12 * min(1.0, max(0.0, (f - 0.35) / 0.65)) ** 2)
-    S('r', [vl(xs_r, 0, XH), hl(b, 100, 420),
-            o(se(xs_r + rxr, yt - ra * 0.92, rxr, ra * 0.92, 180, 90, kr) + [(498, yt, 0.9)])])
+    S('r', [vl(xs_r, 0, XH),
+            o(se(xs_r + rxr, yt - ra * 0.92, rxr, ra * 0.92, 180, 90, kr) + [(530, yt, 0.9)])])
     S('o', [ring(*K.bowl(OL, OR, -osl, XH + osl))])
     bcx, bcy, brx, bry = K.bowl(L, OR, -osl, XH + osl)
     bowl_l = o(se(bcx, bcy, brx, bry, 180, -180, tp(0, 1, None, 0.22)))
@@ -103,8 +104,8 @@ def make(K: Kit, italic=False):
     S('a', [o(hook + [(xr, 0)]),
             o([(xr, ybt), (xr - rxb, ybt)] + se(xr - rxb, ybt - ryb, rxb, ryb, 90, 340, tp(None, 1, None, 0.25)))])
     # c, e, s
-    cx, cy, rx, ry = K.bowl(OL + 6, OR - 6, -osl, XH + osl)
-    S('c', [o(se(cx, cy, rx, ry, K.term(rx, ry, 0), K.term(rx, ry, 3), fin(0, 1)))])
+    cx, cy, rx, ry = K.bowl(OL + 4, OR + 6, -osl, XH + osl)
+    S('c', [o(se(cx, cy, rx, ry, K.term(rx, ry, 0, 74), K.term(rx, ry, 3, 74), fin(0, 1)))])     # ends reach round, so ct is not gappy
     def e_strokes(x0, x1, k=1.0):
         """An e in the box x0..x1 on pen scale k: the bowl runs down to the bar's underside and is cut level
         with it, so its right side is one curve; the bar ends inside the bowl's stroke. (æ and œ draw a narrow
@@ -124,33 +125,34 @@ def make(K: Kit, italic=False):
     ym = XH * 0.53
     sx = W / 2
     up_ry, lo_ry = (yt - ym) / 2, (ym - yb) / 2
-    up_rx, lo_rx = 190 - a - 8, 196 - a
+    up_rx, lo_rx = 200 - a - 8, 206 - a
     sp1 = se(sx, ym + up_ry, up_rx, up_ry, K.term(up_rx, up_ry, 0), 270, fin(0, None))
     sp2 = se(sx, ym - lo_ry, lo_rx, lo_ry, 90, K.term(lo_rx, lo_ry, 2) - 360, fin(None, 1))
     S('s', [o(sp1 + sp2[1:])])
-    # f and t: the stem a little left of centre, a wide crossbar, the hook / tail reaching the right side
+    # f and t: the stem a little left of centre, a wide crossbar, the hook / tail reaching the right side. The narrow
+    # letters fill their cells like JetBrains' and SF Mono's (ct, rt, ti, fl looked gappy)
     xf = 250
     rf = 0.30 * (R - L)
-    S('f', [o([(xf, 0), (xf, AT - rf)] + se(xf + rf, AT - rf, rf, rf, 180, 90) + [(500, AT, 0.9)]),
-            hl(XT, 96, 484), hl(b, 106, 420)])
-    rt = 0.28 * (R - L)
+    S('f', [o([(xf, 0), (xf, AT - rf)] + se(xf + rf, AT - rf, rf, rf, 180, 90) + [(528, AT, 0.9)]),
+            hl(XT, 72, 506), hl(b, 90, 430)])
+    rt = 0.34 * (R - L)
     S('t', [o([(xf, 650), (xf, yb + rt)] + se(xf + rt, yb + rt, rt, rt, 180, 290, fin(None, 1, 0.84)),
               caps=(('L', xf, 650, 1.0, 0.42), 'f')),
-            hl(XT, 96, 484)])
+            hl(XT, 72, 506)])
     # i j l: arms and feet fill the cell; l ends in a tail so it never reads as 1 or I
     xi = W / 2 + 10
-    S('i', [vl(xi, 0, XH), hl(XT, 128, xi, caps=('f', 'FJ')), hl(b, 100, 500)], [dot(xi, yd)])
-    S('ı', [vl(xi, 0, XH), hl(XT, 128, xi, caps=('f', 'FJ')), hl(b, 100, 500)])
+    S('i', [vl(xi, 0, XH), hl(XT, 110, xi, caps=('f', 'FJ')), hl(b, 84, 516)], [dot(xi, yd)])
+    S('ı', [vl(xi, 0, XH), hl(XT, 110, xi, caps=('f', 'FJ')), hl(b, 84, 516)])
     xj = 380
     rj = 0.40 * (R - L) * 0.62
     yh = DSC - osl * 0.5 + b
     jtail = se(xj - rj, yh + rj * 0.92, rj, rj * 0.92, 0, -158, fin(None, 1, 0.84))
-    S('j', [o([(xj, XH), (xj, yh + rj * 0.92)] + jtail), hl(XT, 158, xj, caps=('f', 'FJ'))], [dot(xj, yd)])
-    S('ȷ', [o([(xj, XH), (xj, yh + rj * 0.92)] + jtail), hl(XT, 158, xj, caps=('f', 'FJ'))])
-    xL = 262
-    rl = 0.30 * (R - L)
+    S('j', [o([(xj, XH), (xj, yh + rj * 0.92)] + jtail), hl(XT, 92, xj, caps=('f', 'FJ'))], [dot(xj, yd)])
+    S('ȷ', [o([(xj, XH), (xj, yh + rj * 0.92)] + jtail), hl(XT, 92, xj, caps=('f', 'FJ'))])
+    xL = 250
+    rl = 0.44 * (R - L)
     S('l', [o([(xL, ASC), (xL, yb + rl)] + se(xL + rl, yb + rl, rl, rl, 180, 290, fin(None, 1, 0.84))),
-            hl(AT, 104, xL, caps=('f', 'FJ'))])
+            hl(AT, 86, xL, caps=('f', 'FJ'))])
     for ch, x in (('i', xi), ('ı', xi), ('j', xj), ('ȷ', xj), ('l', xL), ('t', xf)):
         G[ch]['stem'] = x                       # accents and marks below sit over the stem, not the ink's middle
     # k: a straight arm into the stem and a leg off the arm
@@ -202,7 +204,7 @@ def make(K: Kit, italic=False):
     rt_, rb_ = (T - ymB) / 2, (ymB - b) / 2
     S('B', [vl(xs, 0, CAP), o([(xs, T), (CR - 20 - a - rt_, T)] + se(CR - 20 - a - rt_, T - rt_, rt_, rt_, 90, -90) + [(xs, ymB)], caps=('FJ', 'f')),
             o([(xs, ymB), (CR - a - rb_, ymB)] + se(CR - a - rb_, ymB - rb_, rb_, rb_, 90, -90) + [(xs, b)], caps=('f', 'FJ'))])
-    cx, cy, rx, ry = K.bowl(CL - 4, CR + 4, -osc, CAP + osc)
+    cx, cy, rx, ry = K.bowl(CL - 4, CR + 12, -osc, CAP + osc)
     S('C', [o(se(cx, cy, rx, ry, K.term(rx, ry, 0), K.term(rx, ry, 3)))])
     rD = (T - b) / 2
     xD = CR - a - rD * 1.02
@@ -348,12 +350,13 @@ def make(K: Kit, italic=False):
     S('[', [o([(430, BR_T - b), (220 + a, BR_T - b), (220 + a, BR_B + b), (430, BR_B + b)])])
     S(']', [o([(170, BR_T - b), (380 - a, BR_T - b), (380 - a, BR_B + b), (170, BR_B + b)])])
     S('|', [vl(W / 2, BR_B, BR_T)])
-    S('+', [hl(MATH, 100, 500), vl(W / 2, MATH - 200, MATH + 200)])
-    S('=', [hl(MATH - 100, 100, 500), hl(MATH + 100, 100, 500)])
-    S('<', [o([(480, MATH + 210), (130 + a * 1.3, MATH), (480, MATH - 210)])])
-    S('>', [o([(120, MATH + 210), (470 - a * 1.3, MATH), (120, MATH - 210)])])
+    # maths signs fill the cell as in JetBrains Mono and SF Mono, so operators read at a glance in code
+    S('+', [hl(MATH, 80, 520), vl(W / 2, MATH - 220, MATH + 220)])
+    S('=', [hl(MATH - 112, 86, 514), hl(MATH + 112, 86, 514)])
+    S('<', [o([(500, MATH + 240), (104 + a * 1.3, MATH), (500, MATH - 240)])])
+    S('>', [o([(100, MATH + 240), (496 - a * 1.3, MATH), (100, MATH - 240)])])
     ka = 0.8
-    ca, ra_ = (W / 2, 470), 175
+    ca, ra_ = (W / 2, 400), 210                     # big and near the maths axis, so a * b and **argv read clearly
     arms = []
     for ang in (90, 210, 330):
         t = math.radians(ang)
@@ -371,8 +374,12 @@ def make(K: Kit, italic=False):
     S('„', [], [cm(W / 2 - 110, py), cm(W / 2 + 130, py)])
     S('·', [], [dot(W / 2, MATH)])
     S('…', [], [dot(100, py, rd * 0.92), dot(W / 2, py, rd * 0.92), dot(500, py, rd * 0.92)])
-    S('#', [hl(MATH - 120, 70, 530), hl(MATH + 120, 70, 530), D((215, 30), (275, 650), (0, 30, W, 650), k=0.9),
-            D((345, 30), (405, 650), (0, 30, W, 650), k=0.9)])
+    # #: cap height, the uprights a third of the cell apart and the bars well apart, with a pen that stops
+    # growing, so the middle stays an open square in Bold (it closed to a pinhole)
+    kh = min(0.9, 92 / w)
+    yh0, yh1 = MATH - 128, MATH + 128
+    S('#', [hl(yh0, 62, 538, k=kh), hl(yh1, 62, 538, k=kh),
+            D((180, 0), (240, CAP), (0, 0, W, CAP), k=kh), D((360, 0), (420, CAP), (0, 0, W, CAP), k=kh)])
     # %: two lighter rings and a slash
     kp = 0.78 - 0.0022 * max(0.0, dw)
     prx, pry = 102 + 0.3 * dw, 138 + 0.3 * dw
@@ -388,12 +395,12 @@ def make(K: Kit, italic=False):
             D((176, 420), (540, 0), (0, 0, W, CAP), caps=('f', ('y', 0)))])
     # @: an 'a' inside an open ring; the a's stem runs down onto the ring, which starts there. Many strokes
     # share one cell, so the pen is lighter and stops growing (in Bold the inner bowl filled in)
-    kat = min(1.0, (52 + 0.4 * w) / w)
+    kat = min(0.86, (44 + 0.34 * w) / w)            # lighter than a stem: at 13 px a full-weight @ filled in
     aa, ba = a * kat, b * kat
-    cxa, cya = W / 2, 290
-    Rx, Ry = 290 - aa, 340 - ba
-    irx, iry = 132 - aa, 168 - ba
-    icx = cxa - 34
+    cxa, cya = W / 2, 320                             # as tall as the capitals and the descender, like JetBrains' @
+    Rx, Ry = 278 - aa, 400 - ba
+    irx, iry = 122 - aa, 192 - ba                    # a narrow inner bowl, so the ring has room round it at 13 px
+    icx = cxa - 22
     xsa = icx + irx
     cmm = ((xsa - cxa) / Rx) ** (EXP / 2)
     amm = -math.degrees(math.acos(min(1.0, cmm)))
@@ -404,7 +411,7 @@ def make(K: Kit, italic=False):
             o([(xsa, cya + iry + ba), (xsa, ym_)], k=kat, caps=('f', J(('L', xsa, ym_, t0[0], t0[1])))),
             o(arc, k=kat, caps=(J(('x', xsa - aa)), 'f'))])
     S('^', [o([(130, 430), (W / 2, CAP), (470, 430)])])
-    S('~', [o(K.wave(110, 490, MATH, 58))])
+    S('~', [o(K.wave(86, 514, MATH, 62))])
     S('`', [D((235, CAP + 150), (335, CAP - 10), k=0.86)])
     # {: true circles wider than the pen (rule 4.2.1): a squarish corner's tight spot folded in Bold
     mid = (BR_T + BR_B) / 2

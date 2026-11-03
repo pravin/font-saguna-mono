@@ -26,7 +26,7 @@ import compose                                        # noqa: E402
 import glyphs                                         # noqa: E402
 
 # wght axis: user value -> stem width. The Regular is light and open, like a book weight.
-STEMS = {300: 58, 400: 80, 700: 128}
+STEMS = {300: 60, 400: 86, 700: 134}
 ITALIC_ANGLE = 10.0
 METRICS = dict(ascender=TOP, descender=BOT, x_height=XH, cap_height=CAP)
 
