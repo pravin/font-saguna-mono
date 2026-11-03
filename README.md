@@ -19,6 +19,28 @@ Saguna Mono is a programming font with a soft, friendly voice. Every stroke ends
 
 ![The cursive italic alphabet](documentation/images/italic.png)
 
+## Screenshots
+
+**Python** in Dracula
+
+![Python in Saguna Mono, Dracula theme](documentation/images/python-dracula.png)
+
+**Rust** in Solarized Light
+
+![Rust in Saguna Mono, Solarized Light theme](documentation/images/rust-solarized-light.png)
+
+**Go** in Nord
+
+![Go in Saguna Mono, Nord theme](documentation/images/go-nord.png)
+
+**TypeScript** in Gruvbox
+
+![TypeScript in Saguna Mono, Gruvbox theme](documentation/images/typescript-gruvbox.png)
+
+**Shell** in GitHub Light
+
+![A shell script in Saguna Mono, GitHub Light theme](documentation/images/shell-github-light.png)
+
 ## Download
 
 Get the latest release from the [Releases page](https://github.com/pravin/font-saguna-mono/releases/latest), or take the files straight from this repo:
