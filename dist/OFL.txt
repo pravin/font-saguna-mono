@@ -1,19 +1,9 @@
-Copyright © 2026 Partech Systems Limited, with Reserved Font Name "Saguna Mono".
+Copyright 2026 The Saguna Mono Project Authors (https://github.com/pravin/font-saguna-mono)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
 https://openfontlicense.org
 
-The OFL applies only to the Regular, Bold, Italic and Bold Italic styles of Saguna Mono:
-  desktop/static/SagunaMono-Regular.ttf
-  web/static/SagunaMono-Regular.woff2
-  desktop/static/SagunaMono-Bold.ttf
-  web/static/SagunaMono-Bold.woff2
-  desktop/static/SagunaMono-Italic.ttf
-  web/static/SagunaMono-Italic.woff2
-  desktop/static/SagunaMono-BoldItalic.ttf
-  web/static/SagunaMono-BoldItalic.woff2
-Any other file in this package is licensed under LICENSE.txt.
 
 -----------------------------------------------------------
 SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
@@ -28,7 +18,7 @@ with others.
 
 The OFL allows the licensed fonts to be used, studied, modified and
 redistributed freely as long as they are not sold by themselves. The
-fonts, including any derivative works, can be bundled, embedded, 
+fonts, including any derivative works, can be bundled, embedded,
 redistributed and/or sold with any software provided that any reserved
 names are not used by derivative works. The fonts and derivatives,
 however, cannot be released under any other type of license. The

@@ -1,6 +1,7 @@
 """Saguna Mono: the Latin letters that need their own drawing (Æ Ø ß Ł ŋ ...), currency, maths and
 typographic signs, then the code set (cells.py: arrows, box drawing, blocks and shapes)."""
 
+import math
 from kit import ASC, CAP, DSC, MATH, W, XH, merge, se, tf
 from pen import se_point
 
@@ -180,6 +181,9 @@ def extend(G, K, env):
     S('÷', [hl(MATH, 80, 520)], [dot(W / 2, MATH + 200, rd * 0.95), dot(W / 2, MATH - 200, rd * 0.95)])     # as wide as + and =
     S('¬', [o([(100, MATH + 80), (500 - a, MATH + 80), (500 - a, MATH - 110)])])
     S('−', [hl(MATH, 80, 520)])
+    # ◌: the dotted circle that shows a combining mark on its own
+    S('◌', [], [dot(W / 2 + 196 * math.cos(math.radians(t)), MATH + 196 * math.sin(math.radians(t)), rd * 0.52)
+                for t in range(0, 360, 45)])     # eight dots, so they stay apart in Bold
     S('«', [o([(300, MATH + 170), (140, MATH), (300, MATH - 170)], k=0.95), o([(490, MATH + 170), (330, MATH), (490, MATH - 170)], k=0.95)])
     S('»', [o([(110, MATH + 170), (270, MATH), (110, MATH - 170)], k=0.95), o([(300, MATH + 170), (460, MATH), (300, MATH - 170)], k=0.95)])
     S('‹', [o([(390, MATH + 170), (230, MATH), (390, MATH - 170)], k=0.95)])

@@ -1,0 +1,14 @@
+# gftools builder: build Saguna Mono from these UFO masters (Google Fonts' toolchain).
+# The release fonts in fonts/ are built by source/generate.py and the Partech foundry, which also clean
+# overlaps, hint and stamp them; this config rebuilds the same design from the same masters.
+sources:
+  - SagunaMono.designspace
+  - SagunaMono-Italic.designspace
+familyName: Saguna Mono
+axisOrder:
+  - wght
+  - ital
+buildStatic: false
+buildOTF: false
+buildWebfont: false
+outputDir: ../build/gftools

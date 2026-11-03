@@ -9,7 +9,9 @@ over a stem rather than the ink's middle (i j l t) say where in their spec: G[ch
 
 import unicodedata
 
-from foundry.charsets import LATIN
+from fontTools.agl import UV2AGL
+
+from foundry.charsets import GF, LATIN
 from kit import ASC, CAP, W, XH, se
 from pen import Plan, band, bounds
 
@@ -93,7 +95,7 @@ def accented(K, P, G, cont, italic, mode):
         x0, x1 = band(bc, y0, y1)
         return (x0 + x1) / 2
 
-    for u in sorted(LATIN):
+    for u in sorted(LATIN | GF):
         ch = chr(u)
         if ch in cont or ch in out:
             continue
@@ -143,8 +145,39 @@ def accented(K, P, G, cont, italic, mode):
     for ch, name in SPACING.items():                 # spacing marks, centred in the cell
         mc = Ms[False][name]
         out[ch] = shifted(mc, W / 2, 0 if name in ('cedilla', 'ogonek') else XH + GAP_LC)
+    # combining marks: zero width, drawn back over the previous cell, so a mark ccmp cannot compose still lands on
+    # its letter (generate.py gives them no advance)
+    for m, name in {**ABOVE, **BELOW}.items():
+        out[chr(m)] = shifted(Ms[False][name], -W / 2, 0 if m in BELOW else XH + GAP_LC)
     return out
 
 
+def combining(ch):
+    return 0x300 <= ord(ch) <= 0x36F if len(ch) == 1 else False
+
+
+def _gn(ch):
+    return UV2AGL.get(ord(ch)) or f'uni{ord(ch):04X}'
+
+
 def features(names):
-    return ''
+    """ccmp: a letter followed by combining marks becomes the precomposed letter, which has the marks placed for
+    it (decomposed text, as in NFD, then looks like composed text). GDEF marks the combining marks."""
+    rules = []
+    for ch in sorted(n for n in names if len(n) == 1):
+        d = unicodedata.decomposition(ch)
+        if not d or d.startswith('<'):
+            continue
+        parts = [chr(int(x, 16)) for x in d.split()]
+        if len(parts) < 2 or not all(p in names for p in parts) or not all(combining(p) for p in parts[1:]):
+            continue
+        rules.append(f'    sub {" ".join(_gn(p) for p in parts)} by {_gn(ch)};')
+        r = decompose(ch)                           # the fully decomposed spelling too (ǻ = a + ring + acute)
+        if r and len(r[1]) > len(parts) - 1 and r[0] in names and all(chr(m) in names for m in r[1]):
+            rules.append(f'    sub {_gn(r[0])} {" ".join(_gn(chr(m)) for m in r[1])} by {_gn(ch)};')
+    marks = ' '.join(_gn(n) for n in sorted(names) if combining(n))
+    if not rules:
+        return ''
+    return ('feature ccmp {\n    lookup compose {\n' + '\n'.join('    ' + r for r in dict.fromkeys(rules)) +
+            '\n    } compose;\n} ccmp;\n\n'
+            f'@CombiningMarks = [{marks}];\ntable GDEF {{\n    GlyphClassDef , , @CombiningMarks, ;\n}} GDEF;\n')

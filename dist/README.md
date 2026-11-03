@@ -1,10 +1,8 @@
-# Saguna Mono 0.200
+# Saguna Mono 1.000
 
 Saguna Mono is a rounded monospace for code: a light, open rhythm with soft round stroke ends and squarish rounds, and a true cursive italic with looped, handwritten forms.
 
-Copyright © 2026 Partech Systems Limited. All rights reserved. Regular, Bold, Italic and Bold Italic: SIL Open Font License (OFL.txt). Everything else: LICENSE.txt.
-
-**Free styles:** Regular, Bold, Italic and Bold Italic are free under the SIL Open Font License (OFL.txt): use them for anything, including commercial work, apps and websites. The other styles and the variable fonts are licensed under LICENSE.txt.
+Copyright 2026 The Saguna Mono Project Authors (https://github.com/pravin/font-saguna-mono) Free and open source: every style and the variable fonts are licensed under the SIL Open Font License 1.1 (OFL.txt). Use them for anything, including commercial work, apps and websites.
 
 ## Families
 
@@ -15,7 +13,7 @@ Copyright © 2026 Partech Systems Limited. All rights reserved. Regular, Bold, I
 Variable fonts install as "<Family> Variable", so they never clash with the static families.
 Use one or the other in a given app, not both.
 
-**Characters:** 551 in the main family. Covers the Partech character sets: latin, code.
+**Characters:** 574 in the main family. Covers the Partech character sets: latin, code, gf.
 
 ## Desktop
 
@@ -35,4 +33,4 @@ Copy `web/` to your site and link `saguna-mono.css`:
 
 ## Licence
 
-Regular, Bold, Italic and Bold Italic: SIL Open Font License (OFL.txt). Everything else: LICENSE.txt. Licences and prices: https://partechsystems.com/fonts/license
+Free and open source: every style and the variable fonts are licensed under the SIL Open Font License 1.1 (OFL.txt). Use them for anything, including commercial work, apps and websites. Source: https://github.com/pravin/font-saguna-mono

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="quotedbl" format="2">
+  <advance width="600"/>
+  <unicode hex="0022"/>
+  <outline>
+    <contour>
+      <point x="227" y="470" type="line"/>
+      <point x="178" y="470"/>
+      <point x="187" y="518" type="qcurve"/>
+      <point x="216" y="682" type="line"/>
+      <point x="224" y="730"/>
+      <point x="272" y="730" type="qcurve"/>
+      <point x="310" y="730" type="line"/>
+      <point x="358" y="730"/>
+      <point x="350" y="682" type="qcurve"/>
+      <point x="321" y="518" type="line"/>
+      <point x="312" y="470"/>
+      <point x="264" y="470" type="qcurve"/>
+    </contour>
+    <contour>
+      <point x="407" y="470" type="line"/>
+      <point x="358" y="470"/>
+      <point x="367" y="518" type="qcurve"/>
+      <point x="396" y="682" type="line"/>
+      <point x="404" y="730"/>
+      <point x="452" y="730" type="qcurve"/>
+      <point x="490" y="730" type="line"/>
+      <point x="538" y="730"/>
+      <point x="530" y="682" type="qcurve"/>
+      <point x="501" y="518" type="line"/>
+      <point x="492" y="470"/>
+      <point x="444" y="470" type="qcurve"/>
+    </contour>
+  </outline>
+</glyph>

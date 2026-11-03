@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="dotlessi" format="2">
+  <advance width="600"/>
+  <unicode hex="0131"/>
+  <outline>
+    <contour>
+      <point x="298" y="0" type="line"/>
+      <point x="267" y="0"/>
+      <point x="267" y="31" type="qcurve"/>
+      <point x="267" y="509" type="line"/>
+      <point x="267" y="540"/>
+      <point x="298" y="540" type="qcurve"/>
+      <point x="322" y="540" type="line"/>
+      <point x="353" y="540"/>
+      <point x="353" y="509" type="qcurve"/>
+      <point x="353" y="31" type="line"/>
+      <point x="353" y="0"/>
+      <point x="322" y="0" type="qcurve"/>
+    </contour>
+    <contour>
+      <point x="110" y="509" type="line"/>
+      <point x="110" y="540"/>
+      <point x="141" y="540" type="qcurve"/>
+      <point x="310" y="540" type="line"/>
+      <point x="310" y="468" type="line"/>
+      <point x="141" y="468" type="line"/>
+      <point x="110" y="468"/>
+      <point x="110" y="499" type="qcurve"/>
+    </contour>
+    <contour>
+      <point x="84" y="41" type="line"/>
+      <point x="84" y="72"/>
+      <point x="115" y="72" type="qcurve"/>
+      <point x="485" y="72" type="line"/>
+      <point x="516" y="72"/>
+      <point x="516" y="41" type="qcurve"/>
+      <point x="516" y="31" type="line"/>
+      <point x="516" y="0"/>
+      <point x="485" y="0" type="qcurve"/>
+      <point x="115" y="0" type="line"/>
+      <point x="84" y="0"/>
+      <point x="84" y="31" type="qcurve"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,69 @@
+# buildVariable: Build a variable font from a source file
+rule buildVariable
+  command = $
+      /private/tmp/claude-501/-Users-prav-Code-personal-cwordle/5bd9546d-8314-47d7-8a6f-008552f77000/scratchpad/fbvenv/bin/python3 $
+      -m gftools.builder.jobrunner fontmake --output-path $out -o variable $
+      $fontmake_type $in $args $stamp
+  description = buildVariable
+
+# fix: Run gftools-fix
+rule fix
+  command = $
+      /private/tmp/claude-501/-Users-prav-Code-personal-cwordle/5bd9546d-8314-47d7-8a6f-008552f77000/scratchpad/fbvenv/bin/python3 $
+      -m gftools.builder.jobrunner gftools-fix-font -o $out $args $in $stamp
+  description = fix
+
+# buildStat: Build a STAT table from one or more source files
+rule buildSTAT-operation
+  command = gftools-gen-stat --out $tempdir $args -- $in && mv $finalfile $
+      $out $stamp
+rule buildSTAT-postprocess
+  command = gftools-gen-stat --inplace $args -- $in $stamp
+
+# copy: Copy a file
+rule copy
+  command = $
+      /private/tmp/claude-501/-Users-prav-Code-personal-cwordle/5bd9546d-8314-47d7-8a6f-008552f77000/scratchpad/fbvenv/bin/python3 $
+      -m gftools.builder.jobrunner cp $in $out $stamp
+  description = copy
+
+# Generating /var/folders/qf/60nxzv1934z1yzzw042jycfh0000gn/T/tmpb068nq0m
+build /var/folders/qf/60nxzv1934z1yzzw042jycfh0000gn/T/tmpb068nq0m: $
+    buildVariable SagunaMono.designspace
+  operation = buildVariable
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -m
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/qf/60nxzv1934z1yzzw042jycfh0000gn/T/tmpt3cao1v4
+build /var/folders/qf/60nxzv1934z1yzzw042jycfh0000gn/T/tmpt3cao1v4: $
+    buildVariable SagunaMono-Italic.designspace
+  operation = buildVariable
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -m
+  fontmake_args =  --verbose WARNING 
+# Postprocessing  with BuildSTAT
+build $
+    /var/folders/qf/60nxzv1934z1yzzw042jycfh0000gn/T/tmp_95cyi7p.buildStatstamp: $
+    buildSTAT-postprocess $
+    ../build/gftools/variable/SagunaMono-Italic[wght].ttf $
+    ../build/gftools/variable/SagunaMono[wght].ttf | $
+    ../build/gftools/variable/SagunaMono-Italic[wght].ttf $
+    ../build/gftools/variable/SagunaMono[wght].ttf
+  stamp =  && touch $
+      /var/folders/qf/60nxzv1934z1yzzw042jycfh0000gn/T/tmp_95cyi7p.buildStatstamp
+  postprocess = buildStat
+# Generating ../build/gftools/variable/SagunaMono[wght].ttf
+build ../build/gftools/variable/SagunaMono[wght].ttf: fix $
+    /var/folders/qf/60nxzv1934z1yzzw042jycfh0000gn/T/tmpb068nq0m
+  operation = fix
+  args = 
+# Generating ../build/gftools/variable/SagunaMono-Italic[wght].ttf
+build ../build/gftools/variable/SagunaMono-Italic[wght].ttf: fix $
+    /var/folders/qf/60nxzv1934z1yzzw042jycfh0000gn/T/tmpt3cao1v4
+  operation = fix
+  args = 
+default $
+    /var/folders/qf/60nxzv1934z1yzzw042jycfh0000gn/T/tmp_95cyi7p.buildStatstamp $
+    ../build/gftools/variable/SagunaMono[wght].ttf

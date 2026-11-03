@@ -47,7 +47,7 @@ def shear(contours, k):
 
 def put(font, name, contours, uni=None):
     g = font.newGlyph(name)
-    g.width = W
+    g.width = 0 if uni is not None and 0x300 <= uni <= 0x36F else W     # combining marks take no space
     if uni is not None:
         g.unicodes = [uni]
     pen = g.getPointPen()

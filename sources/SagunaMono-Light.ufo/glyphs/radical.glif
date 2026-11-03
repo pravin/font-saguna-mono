@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="radical" format="2">
+  <advance width="600"/>
+  <unicode hex="221A"/>
+  <outline>
+    <contour>
+      <point x="50" y="373" type="line"/>
+      <point x="40" y="397"/>
+      <point x="65" y="407" type="qcurve"/>
+      <point x="149" y="441" type="line"/>
+      <point x="169" y="449"/>
+      <point x="176" y="429" type="qcurve"/>
+      <point x="289" y="76" type="line"/>
+      <point x="503" y="793" type="line"/>
+      <point x="511" y="821"/>
+      <point x="539" y="812" type="qcurve"/>
+      <point x="543" y="811" type="line"/>
+      <point x="569" y="803"/>
+      <point x="561" y="778" type="qcurve"/>
+      <point x="297" y="-95" type="line"/>
+      <point x="291" y="-116"/>
+      <point x="284" y="-95" type="qcurve"/>
+      <point x="131" y="375" type="line"/>
+      <point x="85" y="356" type="line"/>
+      <point x="60" y="347"/>
+      <point x="50" y="371" type="qcurve"/>
+    </contour>
+  </outline>
+</glyph>
