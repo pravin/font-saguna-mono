@@ -1,0 +1,18 @@
+# Saguna Mono: what the foundry needs to know. See partech-foundry/README.md.
+name = "Saguna Mono"
+version = "0.100"           # x.yyy; bump for every release
+year = 2026
+category = "mono"
+description = "Saguna Mono is a rounded monospace for code: a light, open rhythm with soft round stroke ends and squarish rounds, and a true cursive italic with looped, handwritten forms."
+charsets = ["latin", "code"]
+charset_exclude = ""         # characters deliberately left out, e.g. "Ĳĳ"
+sample = "fn saguna(l1: &[i32]) -> Il0O { rn != m }"
+generate = "source/generate.py"
+# Hybrid licensing: these static styles are free under the SIL Open Font License; the other
+# styles and the variable fonts are sold under the EULA.
+free = ["Regular", "Bold", "Italic", "Bold Italic"]
+
+[[family]]
+name = "Saguna Mono"
+static = ["Light", "Regular", "Medium", "Bold", "Light Italic", "Italic", "Medium Italic", "Bold Italic"]
+variable = ["Upright", "Italic"]

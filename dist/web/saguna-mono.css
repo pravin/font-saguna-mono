@@ -1,0 +1,11 @@
+/* Saguna Mono 0.100. Copyright © 2026 Partech Systems Limited. All rights reserved. Licensed under LICENSE.txt. */
+@font-face { font-family: "Saguna Mono"; font-weight: 300; font-style: normal; font-display: swap; src: url("static/SagunaMono-Light.woff2") format("woff2"); }
+@font-face { font-family: "Saguna Mono"; font-weight: 400; font-style: normal; font-display: swap; src: url("static/SagunaMono-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Saguna Mono"; font-weight: 500; font-style: normal; font-display: swap; src: url("static/SagunaMono-Medium.woff2") format("woff2"); }
+@font-face { font-family: "Saguna Mono"; font-weight: 700; font-style: normal; font-display: swap; src: url("static/SagunaMono-Bold.woff2") format("woff2"); }
+@font-face { font-family: "Saguna Mono"; font-weight: 300; font-style: italic; font-display: swap; src: url("static/SagunaMono-LightItalic.woff2") format("woff2"); }
+@font-face { font-family: "Saguna Mono"; font-weight: 400; font-style: italic; font-display: swap; src: url("static/SagunaMono-Italic.woff2") format("woff2"); }
+@font-face { font-family: "Saguna Mono"; font-weight: 500; font-style: italic; font-display: swap; src: url("static/SagunaMono-MediumItalic.woff2") format("woff2"); }
+@font-face { font-family: "Saguna Mono"; font-weight: 700; font-style: italic; font-display: swap; src: url("static/SagunaMono-BoldItalic.woff2") format("woff2"); }
+@font-face { font-family: "Saguna Mono Variable"; font-weight: 300 700; font-style: normal; font-display: swap; src: url("variable/SagunaMono-VF.woff2") format("woff2-variations"); }
+@font-face { font-family: "Saguna Mono Variable"; font-weight: 300 700; font-style: italic; font-display: swap; src: url("variable/SagunaMono-Italic-VF.woff2") format("woff2-variations"); }
