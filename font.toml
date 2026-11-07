@@ -11,7 +11,7 @@ generate = "source/generate.py"
 # Fully open: every style and the variable fonts under the SIL Open Font License, with no Reserved
 # Font Name, so it can go to Google Fonts. The copyright names the project authors and this repo.
 licence = "ofl"
-repository = "https://github.com/pravin/font-saguna-mono"
+repository = "https://github.com/partech-systems/font-saguna-mono"
 
 [[family]]
 name = "Saguna Mono"

@@ -1,1 +1,1 @@
-partech-foundry @ git+https://github.com/pravin/partech-foundry.git@v0.8.0
+partech-foundry @ git+https://github.com/partech-systems/partech-foundry.git@v0.8.0

@@ -43,7 +43,7 @@ Saguna Mono is a programming font with a soft, friendly voice. Every stroke ends
 
 ## Download
 
-Get the latest release from the [Releases page](https://github.com/pravin/font-saguna-mono/releases/latest), or take the files straight from this repo:
+Get the latest release from the [Releases page](https://github.com/partech-systems/font-saguna-mono/releases/latest), or take the files straight from this repo:
 
 | Folder | What's in it |
 |---|---|
@@ -124,4 +124,4 @@ Saguna Mono is licensed under the [SIL Open Font License 1.1](OFL.txt). You can 
 
 ## Credits
 
-Designed by [Partech Systems](https://partechsystems.com/fonts/saguna-mono/). Found a bug or a character that looks wrong? [Open an issue](https://github.com/pravin/font-saguna-mono/issues).
+Designed by [Partech Systems](https://partechsystems.com/fonts/saguna-mono/). Found a bug or a character that looks wrong? [Open an issue](https://github.com/partech-systems/font-saguna-mono/issues).
